@@ -131,6 +131,36 @@
     .entry-card p a{text-decoration:underline}
     @media(max-width:850px){nav{gap:9px;font-size:11px}}
   </style>
+
+  <style id="recruit-style">
+    /* 募集ブロック（トップ）。既存のデザインには触れず、このブロックだけの見た目。 */
+    .recruit{background:#fffdf3;border-bottom:1px solid #f0e9c4;padding:34px 0 36px}
+    .recruit-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+    .recruit-badge{display:inline-flex;align-items:center;gap:8px;background:var(--yellow);color:#263235;font-family:"Kosugi Maru",sans-serif;font-size:12px;padding:6px 14px;border-radius:20px}
+    .recruit-badge:before{content:"";width:8px;height:8px;border-radius:50%;background:#263235}
+    .recruit h2{font-family:"Yomogi","Kosugi Maru",sans-serif;font-weight:400;font-size:clamp(28px,3.4vw,40px);line-height:1.4;margin:14px 0 10px;color:#263235}
+    .recruit-lead{font-family:"Kosugi Maru",sans-serif;font-size:14px;line-height:1.9;color:#50595c;margin:0;max-width:640px}
+    .recruit-cta{display:flex;gap:10px;flex-wrap:wrap}
+    .recruit-cta a{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:28px;font-family:"Kosugi Maru",sans-serif;font-size:13px;background:var(--yellow);color:#263235;transition:transform .2s,box-shadow .2s}
+    .recruit-cta a.sub{background:#fff;border:1px solid #d9dedb}
+    .recruit-cta a:hover{transform:translateY(-2px);box-shadow:0 7px 18px #d5b90030}
+    .recruit-facts{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:24px 0 0;border:1px solid #efe6b8;border-radius:12px;background:#fff;overflow:hidden}
+    .recruit-facts div{padding:14px 18px;border-right:1px solid #f3edcf}
+    .recruit-facts div:last-child{border-right:0}
+    .recruit-facts dt{font-family:"DM Sans",sans-serif;font-size:10px;letter-spacing:1.4px;color:#8c7a1c;font-weight:700}
+    .recruit-facts dd{margin:4px 0 0;font-family:"Kosugi Maru",sans-serif;font-size:13px;color:#263235;line-height:1.5}
+    .recruit-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+    .recruit-card{display:flex;flex-direction:column;background:#fff;border:1px solid #e8ebe9;border-radius:12px;overflow:hidden;color:var(--ink);transition:transform .25s,box-shadow .25s}
+    .recruit-card:hover{transform:translateY(-4px);box-shadow:0 12px 26px #1a2a2d1a}
+    .recruit-card .shot{height:170px;background-color:#f2f4f1;background-size:contain;background-position:center;background-repeat:no-repeat;border-bottom:1px solid #eef0ed}
+    .recruit-card .txt{padding:14px 18px 16px}
+    .recruit-card b{display:block;font-family:"Kosugi Maru",sans-serif;font-size:15px;font-weight:400;margin-bottom:4px}
+    .recruit-card span{font-family:"Kosugi Maru",sans-serif;font-size:12px;color:#66716f;line-height:1.7}
+    .recruit-card em{display:block;font-style:normal;font-family:"DM Sans",sans-serif;font-size:11px;color:#8c7a1c;margin-top:8px;font-weight:700}
+    .recruit-note{font-family:"Kosugi Maru",sans-serif;font-size:11px;color:#7a8284;line-height:1.8;margin:18px 0 0}
+    @media(max-width:850px){.recruit-facts{grid-template-columns:1fr 1fr}.recruit-facts div:nth-child(2){border-right:0}.recruit-facts div:nth-child(-n+2){border-bottom:1px solid #f3edcf}}
+    @media(max-width:650px){.recruit{padding:24px 0 28px}.recruit-facts{grid-template-columns:1fr}.recruit-facts div{border-right:0;border-bottom:1px solid #f3edcf;padding:11px 16px}.recruit-facts div:last-child{border-bottom:0}.recruit-cards{grid-template-columns:1fr;gap:12px}.recruit-card .shot{height:150px}.recruit-cta a{width:100%;justify-content:center}}
+  </style>
 </head>
 <body>
 <div class="shell">
@@ -140,7 +170,46 @@
     <nav aria-label="メインメニュー"><a href="#top">トップ</a><a href="#about">イベント概要</a><a href="#program">プログラム</a><a href="#details">募集要項</a><a href="#faq">FAQ</a><a href="terms.html">規約・同意</a><a class="apply" href="#entry">参加案内 ↗</a></nav>
   </header>
   <main>
-    <section class="hero" id="top"><div class="hero-content">
+    <section class="recruit" id="recruit" aria-labelledby="recruit-title">
+  <div class="container">
+    <div class="recruit-head">
+      <div>
+        <span class="recruit-badge">参加者募集中</span>
+        <h2 id="recruit-title">AIを使える学生を、4〜5人募集しています。</h2>
+        <p class="recruit-lead">企業から提供される課題に、個人で120分挑戦します。完成品の納品ではなく、AIを使って試し、学ぶ場です。参加は無料です。</p>
+      </div>
+      <div class="recruit-cta">
+        <a href="https://forms.gle/DZ4uGaVGrSgMK1bA8" target="_blank" rel="noopener noreferrer">応募フォームへ <span>↗</span></a>
+        <a class="sub" href="#details">募集要項を見る</a>
+      </div>
+    </div>
+
+    <dl class="recruit-facts">
+      <div><dt>DATE</dt><dd>2026年11月17日（火）<br>17:00〜21:00</dd></div>
+      <div><dt>FEE</dt><dd>参加無料<br>（交通費・通信費は各自）</dd></div>
+      <div><dt>PLACE</dt><dd>宮崎大学 木花キャンパス<br>附属図書館3階（候補）</dd></div>
+      <div><dt>WHO</dt><dd>AIを既に使っている学生<br>プログラミング経験は不要</dd></div>
+    </dl>
+
+    <div class="recruit-cards">
+      <a class="recruit-card" href="#program">
+        <div class="shot" style="background-image:url('assets/shot-program.png')" role="img" aria-label="プログラムの画面"></div>
+        <div class="txt"><b>当日の流れ</b><span>受付から発表・振り返りまで、17時から21時の流れを確認できます。</span><em>プログラムを見る →</em></div>
+      </a>
+      <a class="recruit-card" href="#details">
+        <div class="shot" style="background-image:url('assets/shot-details.png')" role="img" aria-label="募集要項の画面"></div>
+        <div class="txt"><b>募集要項・参加条件</b><span>対象、定員、持参物、審査のしくみをまとめています。</span><em>募集要項を見る →</em></div>
+      </a>
+      <a class="recruit-card" href="#entry">
+        <div class="shot" style="background-image:url('assets/shot-entry.png')" role="img" aria-label="応募の画面"></div>
+        <div class="txt"><b>応募する</b><span>参加条件と規約を確認してから、応募フォームへお進みください。</span><em>応募の案内へ →</em></div>
+      </a>
+    </div>
+
+    <p class="recruit-note">申込期限・選定方法は調整中です。フォームの送信だけでは参加確定にはなりません。確定後に案内します。</p>
+  </div>
+</section>
+<section class="hero" id="top"><div class="hero-content">
       <div class="kicker"><b>0</b> MIYAZAKI AI HACKATHON <span>2026</span></div>
       <h1>地域やみんなの課題を、<br><em>120分</em>で「動く」へ。</h1>
       <p class="hero-lead">AIを「使ってみる」から、「つくってみる」へ。<br>学生の発想とAIの力で、身近な課題に挑む。</p>
